@@ -1,9 +1,11 @@
 # Angular employee Crud Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
-
+# Employee List
 ![](/src/assets/list.png)
+# Employee 
 ![](/src/assets/details.png)
+# Employee Delete 
 ![](/src/assets/dialog.png)
 
 
