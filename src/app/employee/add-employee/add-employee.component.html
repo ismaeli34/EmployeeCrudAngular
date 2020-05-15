@@ -1,0 +1,56 @@
+<div class="container-fluid ">
+
+<div class="container example-form   d-flex align-items-center justify-content-center">
+
+      
+    <div class="child-div example-form">
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm,$event)" class="example-form">
+    
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label> Name</mat-label>
+        <input type="text"  required name="empName" #empName="ngModel" [(ngModel)]="employee.empName" matInput>
+
+      </mat-form-field></td>
+
+      
+    </tr>
+    <p *ngIf="empName.errors?.required" style="color: red;">Name is required</p>
+
+  </table>
+  
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <textarea required [(ngModel)]="employee.address" #address="ngModel" name="address"  matInput placeholder="Ex. 100 Main St"></textarea>       
+      </mat-form-field>
+
+      
+    </p>
+
+    <p *ngIf="address.errors?.required" style="color: red;">Address is required</p>
+
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Department</mat-label>
+        <input required  #deptNames="ngModel"   [(ngModel)]="employee.deptNames" name="deptNames" required matInput placeholder="Informatik">
+      </mat-form-field>
+      <p *ngIf="deptNames.errors?.required" style="color: red;">Department Name is required</p>
+    
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone Number</mat-label>
+        <input required #phoneNumber="ngModel" [rangeLength]="[0, 10]" [(ngModel)]="employee.phoneNumber" name="phoneNumber" matInput placeholder="9090909090">
+      </mat-form-field>
+      <p *ngIf="phoneNumber.errors?.required" style="color: red;">Phone number is required</p>
+      <p *ngIf="phoneNumber.errors?.rangeLength" style="color: red;">Phone number is minimum length is 10</p>
+
+
+
+    <button [disabled]="!employeeForm.valid"  mat-raised-button color="primary">Submit</button>
+
+  </form>
+</div>
+</div>
+</div>
